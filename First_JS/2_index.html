@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>This is Java Script Heading</h1>
+    <p>Time is treasure if you not value time you will regeret for lifetime</p>
+    <button>Click Here</button>
+    <script>
+        //internal JS
+        //window: alert
+        let message = "Submitted successfully";
+        // window.alert(message);
+        // alert(message);
+
+        //prompt >>>to take user input
+        // let name=prompt("enter your name");
+        // alert("Hello "+name);
+
+        //confirm
+        // let choice=confirm("want to open google.com?");
+        // if(choice==true){
+        //     location.href="https://www.google.com";
+        // }else{
+        //     alert("not navigating to the google");
+        // }
+        // alert(choice);
+        //console object
+        //log, info, warn, erros, table, time, clear
+
+        console.log("This is log");
+        console.warn("This is warning");
+        console.error("This is error");
+        console.info("triyng...")
+        // console.clear();
+        // setTimeout(function(){
+        //     console.log("clearing...");
+        //     console.clear();
+        // },3000)
+
+        let student = {
+            name: "Ismail",
+            address: "Sakinaka",
+            phone: "287642723"
+        }
+        console.log(student);
+        console.table(student);
+        for (let i = 0; i < 5; i++) {
+            console.log("Hello, %s you have called me %d times.", "Ismail", i + 1);
+        }
+        let total=1;
+        for(let i=1;i<101;i++){
+            total+=i;
+        }
+        console.log(total);
+    </script>
+
+</body>
+
+</html>
