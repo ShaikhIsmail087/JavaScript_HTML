@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>String important functions</h1>
+    <script>
+        //java script code learning string important functions
+        let s="Learning JS...";
+        console.log(s);
+        //length of string characters
+        let len=s.length;
+        console.log("length",len);
+        //concate()
+        let s1="and angular."
+        // console.log(s+" "+s1);
+        console.log(s.concat(s1));
+
+        //charAt(index)
+        let ch=s.charAt(3);
+        console.log("Index at Character",ch);
+
+        //indexOf(char)
+        let index=s.indexOf('J');
+        console.log("Character at index",index);
+
+        //lastIndexOf(char)
+        let index1=s.lastIndexOf('n');
+        console.log("lastindex of char",index1);
+
+        //toUpperCase()
+        console.log(s.toUpperCase());
+
+        //toLowerCase
+        console.log(s.toLowerCase());
+
+        //substring(start,end)
+        let sub=s.substring(9,11);
+        console.log("substring",sub);
+
+        //startWith()
+        console.log(s.startsWith("L"));
+
+        //endsWith()
+        console.log(s.endsWith("..."));
+
+        //split()
+        let sp=s.split(" ");
+        console.log(typeof sp);
+        console.log(sp);
+        console.log(sp[0]);
+        console.log(sp[1]);
+
+        //trim()
+        let tr="        My content   "
+        console.log(tr);
+        console.log(tr.trim());
+        
+    </script>
+</body>
+</html>
