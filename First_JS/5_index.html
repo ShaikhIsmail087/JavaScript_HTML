@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Important string operations</title>
+</head>
+<body>
+    <h1>5 Important String operations</h1>
+    <script>
+        //how to check equality of two string ==, ===
+        //literal
+        let str1="Javascript";
+        let str2="Javascript";
+        console.log(str1);
+        console.log(str2);
+        console.log(str1==str2);
+        if(str1==str2){
+            console.log("Both string are equal...");
+        }
+
+        //creating string in another way
+        let str3=new String("Javascript");
+        let str4=new String("Javascript");
+        console.log(str3);
+        console.log(str4);
+        console.log(str3==str4);
+
+        //comparing two string
+        let s1="A";
+        let s2="B";
+        //localeCompare
+        // s1<s2=-1  ,   s1>s2=1   , s1=s2==0
+        let result=s1.localeCompare(s2);
+        console.log(result);
+
+        //Replace certain word with another
+        let oldString="I hate Javascript";
+        let newString=oldString.replace("hate","love");
+        console.log(newString);
+
+        //accessing character -string[0] charAt(index)
+        console.log(oldString.charAt(0));
+        console.log(oldString[2]);
+
+        //converting string to array by split()
+        let as=oldString.split(" ");
+        console.log(as);
+        let chara=oldString.split("");
+        console.log(chara);
+    </script>
+</body>
+</html>
