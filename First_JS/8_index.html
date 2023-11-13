@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Js common array operations</h1>
+    <script>
+        //create
+        let names = ["jhon", "peter", "sam"]
+        console.log(names);
+        console.log(names.length);
+
+        //access using index
+        console.log(names[0]);
+        console.log(names[2]);
+
+        //loop over an array forEach
+        names.forEach(function (item, index) {
+            //this is function body
+            console.log(index, " => ", item);
+        })
+
+        let nums = [10, 20, 30, 40];
+        let sum = 0;
+        nums.forEach(function (it, i) {
+            sum += it;
+        })
+        console.log("sum", sum);
+
+        //adding and removing last element
+        names.push("ismail");
+        console.log(names);
+
+        let r=names.pop();
+        console.log(r);
+        console.log(names);
+        // console.log(names.pop());
+        // console.log(names);
+
+        //removing first element
+        let r1=names.shift();
+        console.log(r1);
+        console.log(names);
+
+        //adding at first element
+        let r2=names.unshift("ismail");
+        console.log(r2);
+        console.log(names);
+
+        let pos=names.indexOf("peter")
+        console.log(pos);
+
+        //remove the element from any position by splice
+        console.log(names.splice(1,2));
+        console.log(names);
+
+        //copy an array using slice shallowcopy
+        let copy=names.slice();
+        console.log(copy);
+        console.log(names);
+    </script>
+</body>
+
+</html>

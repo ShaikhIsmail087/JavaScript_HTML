@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>functions</title>
+</head>
+
+<body>
+    <h1>Learning functions in js</h1>
+    <script>
+        console.log("line 1st");
+        console.log("line 2nd");
+        //function
+        //how to create a function
+        function sayHello() {   //body open
+
+            //here we write task
+            console.log("hello ,");
+            console.log("how are you?");
+            console.log("what are you doing");
+
+        } //body close
+
+        //function with argument and return type
+        //formal parameters
+        function doSum(a, b) {
+            //sum of two number
+            let c = a + b;
+            return c;
+        }
+
+        sayHello()
+        //actual parameters
+        let s = doSum(10, 20);
+        console.log("sum is ", s);
+
+        //arrow function
+        const toCelsius = (fahrenheit) => {
+            let result = (5 / 9) * (fahrenheit - 32);
+            return result;
+        }
+        let c = toCelsius(102);
+        console.log(c);
+
+    </script>
+</body>
+
+</html>
