@@ -3,6 +3,7 @@
         let -
         const -
         var -  scope problem it will be Global or function scope - var has no block scope
+        install - live server
 
 */
 

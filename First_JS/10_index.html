@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors</title>
+    <!-- javascript -->
+    <script>
+        console.log("inside head section");
+    </script>
+</head>
+
+<body>
+    <h1>DOM Selectors</h1>
+    <h2 id="banner">Learning JS</h2>
+    <h1 class="myClass">Hello world</h1>
+    <h1 class="myClass">Hello world</h1>
+    <h1 class="myClass">Hello world</h1>
+
+    <!-- javascipt -->
+    <script>
+        console.log("inside body");
+        let ht = document.documentElement;
+        let bo = document.body;
+        let he = document.head;
+        let ti = document.title;
+
+        // console.log(ti);
+
+        // console.log(ht);
+        // console.log(bo);
+        // console.log(he);
+
+        //selecting element by id
+        // getElementById
+        let h2 = document.getElementById("banner");
+        // console.log(h2);
+
+        // h2.innerHTML="Changed text";
+        // h2.style.color="white";
+        // h2.style.background="blue"
+
+        //selecting element by class name
+        // let el=document.getElementsByClassName('myClass');
+
+        // for (const element of el) {
+        //     console.log(element);
+        //     element.style.color="white";
+        //     element.style.background="blue";
+        // }
+
+        // selecting element with the help of css selector
+        //querySelector - single element
+        //querySelectorAll - list of elements
+
+        let els = document.querySelectorAll('.myClass');
+        console.log(els);
+        for (const e of els) {
+            console.log(e);
+            e.style.color="blue";
+        }
+    </script>
+</body>
+
+</html>

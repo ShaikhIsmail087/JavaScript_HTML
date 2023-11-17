@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Styling</title>
+    <style>
+        .red {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="getStyle()">Get Info</button>
+    <h2 id="main">Learning javascipt</h2>
+    <h2 id="sub">Nature</h2>
+    <h2 id="subsub">Embracing the Beauty and Importance of Nature</h2>
+    <p>
+        Nature, with its kaleidoscope of colors, intricate patterns, and majestic landscapes, captivates the human
+        spirit in a profound way. The gentle rustle of leaves in a forest,
+        the rhythmic crashing of ocean waves, and the vibrant hues of a sunset all contribute to an aesthetic experience
+        that transcends the mundane. Beyond its sheer beauty,
+        nature plays a pivotal role in shaping our well-being. Scientific research underscores the therapeutic effects
+        of spending time in natural settings, highlighting nature's
+        ability to alleviate stress, enhance mood, and boost cognitive function. The intricate web of life, from the
+        smallest microorganisms to the largest mammals,
+        forms the tapestry of biodiversity that sustains our planet. Recognizing the intrinsic value of nature, it is
+        imperative that we embrace conservation efforts and
+        sustainable practices to safeguard the delicate balance of ecosystems. In doing so, we not only preserve the
+        exquisite beauty that surrounds us but also ensure the
+        continued provision of vital ecosystem services that support life on Earth. As we marvel at the wonders of
+        nature, let us also acknowledge our responsibility to be
+        stewards of this precious gift, fostering a harmonious relationship between humanity and the environment.
+    </p>
+    <script>
+        //select the element
+        let mainOb = document.getElementById('main');
+
+        //applying style on element
+        const changeStyle = () => {
+            mainOb.style.color = "blue";
+            mainOb.style.fontSize = "30px";
+            mainOb.style.border = "1px solid red";
+            mainOb.style.padding = "20px";
+            // mainOb.style.background = "#e2e2e2";
+
+            document.body.style.background = "black";
+            document.body.style.color = "white";
+
+            mainOb.className =mainOb.className+ "red";
+        };
+        const getStyle = () => {
+            // console.log(mainOb.style.color);
+            // console.log(mainOb.style.fontSize);
+            // console.log(mainOb.style.border);
+            let styles = window.getComputedStyle(mainOb);
+            console.log(styles.getPropertyValue("color"));
+        };
+    </script>
+</body>
+
+</html>
