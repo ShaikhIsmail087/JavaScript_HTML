@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+            padding: 0;
+            margin: 0;
+            color: rgb(8, 131, 245);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .clock {
+            font-size: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="clock">3:30 PM</span>
+
+    </div>
+    <script>
+        const getTime=()=>{
+            let d=new Date();
+            
+            let h=d.getHours();
+            let m=d.getMinutes();
+            let s=d.getSeconds();
+
+            return `${h} : ${m} : ${s}`;
+        };
+        
+        setInterval(()=>{
+            let clockOb=document.querySelector(".clock");
+            clockOb.innerHTML=getTime();
+        }, 1000)
+
+    </script>
+</body>
+
+</html>
