@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascipt Timers</title>
+</head>
+
+<body>
+    <h1>Javascipt Timers</h1>
+
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+
+    <script>
+
+        // setTimeout - execute code after some time
+
+
+        // setInterval - execute code at regular intervals
+
+        //we have to write our code that we want to execute after 5 sec:use case
+        console.log("Starting setTimeout function...");
+        function myCode() {
+            console.log("hey i am developer...");
+            console.log("How are you?");
+            console.log("Ending setTimeout function...");
+        }
+        let timer;
+        function start() {
+            //we have to start..
+            // setTimeout(myCode,5000);
+            //setTimeout(function,delay in mili sec)
+
+            timer = setInterval(myCode, 2000);
+            console.log(timer);
+
+        }
+
+        function stop() {
+            clearInterval(timer);
+        }
+
+    </script>
+</body>
+
+</html>
