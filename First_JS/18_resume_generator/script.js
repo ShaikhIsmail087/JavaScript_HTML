@@ -74,13 +74,30 @@ function generateCV() {
 
     document.getElementById("aqT").innerHTML = str1;
 
-    document.getElementById("cv-form").style.display='none';
-    document.getElementById('cv-template').style.display='block'
+    //code for setting image
+    let file = document.getElementById('imgField').files[0];
+
+    console.log(file);
+
+    let reader = new FileReader();
+
+    reader.readAsDataURL(file);
+
+    // console.log(reader.result);
+
+    //set the image to  template
+
+    reader.onloadend=function(){
+        document.getElementById('imgTemplate').src = reader.result;
+    }
+
+    document.getElementById("cv-form").style.display = 'none';
+    document.getElementById('cv-template').style.display = 'block'
 
 }
 
 //printing cv
 
-function printCV(){
-    window.print(); 
+function printCV() {
+    window.print();
 }
