@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Age Calculater</title>
+    <style>
+        body {
+            background: #e2e2e2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6 offset-md-3">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center text-uppercase">
+                            Age Calculater
+                        </h1>
+
+                        <p class="text-secondary"><small>Provide your date of birth**</small></p>
+                        <div class="row mt-3">
+
+                            <div class="col-md-4">
+                                <!-- date -->
+                                <div class="form-group">
+                                    <input type="text" placeholder="Date" class="form-control" id="date_field">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <!-- month -->
+                                <div class="form-group">
+                                    <select name="" id="month_field" class="form-control">
+                                        <option value="" selected disabled>Month</option>
+                                        <option value="january">Jan</option>
+                                        <option value="february">Feb</option>
+                                        <option value="march">Mar</option>
+                                        <option value="april">April</option>
+                                        <option value="may">May</option>
+                                        <option value="june">June</option>
+                                        <option value="july">July</option>
+                                        <option value="august">Aug</option>
+                                        <option value="september">Sept</option>
+                                        <option value="october">Oct</option>
+                                        <option value="november">Nov</option>
+                                        <option value="december">Dec</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <!-- year -->
+                                <div class="form-group">
+                                    <input id="year_field" type="text" placeholder="Year" class="form-control">
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="container text-center mt-3">
+                            <button onclick="calculateAge()" class="btn btn-outline-warning btn-sm">Calculate</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+
+    <script>
+        const calculateAge = () => {
+            let date = document.getElementById('date_field').value;
+            let month = document.getElementById('month_field').value;
+            let year = document.getElementById('year_field').value;
+
+            // console.log(date);
+            // console.log(month);
+            // console.log(year);
+
+            if (date > 31) {
+                alert("input valid date");
+                return;
+            }
+            //parse
+            let dob = new Date(`${date} ${month} ${year}`);
+            let now = new Date();
+            let difference = now - dob;
+
+            // console.log(difference);
+
+            // let days = (difference) / (1000 * 60 * 60 * 24);
+            let days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+            // Assuming an average year has 365.25 days to account for leap years
+            let averageDaysInYear = 365.25;
+            let years = Math.floor(days / averageDaysInYear);
+
+            // console.log(days);
+            alert(`your age is ${years} years`)
+
+            // console.log(dob);
+        };
+    </script>
+
+</body>
+
+</html>
