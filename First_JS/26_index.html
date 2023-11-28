@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Object Learning</title>
+</head>
+
+<body>
+    <h2>Class Object Learning</h2>
+    <script>
+        //javascript
+        class Student {
+            //body of class
+            constructor(name, phone) {
+                //this is constructor body
+                this.name = name;
+                this.phone = phone;
+                console.log("Object created...");
+            }
+
+            showDetails() {
+                console.log("Name :", this.name);
+                console.log("Phone :", this.phone);
+                console.log("++++++++++++++++++++++++++++");
+            }
+
+            getName() {
+                return this.name.toUpperCase();
+            }
+        }
+
+        //going to create object
+        let s1 = new Student("Ismail","827672722");
+        s1.showDetails();
+        console.log(s1.getName());
+
+        let s2 = new Student("Tushar","763247262");
+        s2.showDetails();
+        console.log(s2.getName());
+    </script>
+</body>
+
+</html>

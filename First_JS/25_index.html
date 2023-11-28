@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Getters and Setter , Constructor</title>
+</head>
+
+<body>
+    <script>
+        //student ob
+        let student1 = {
+            name: "abc",
+            college: "xyz",
+            city: "qrs",
+
+            get getName() {
+                return this.name.toUpperCase();
+            },
+
+            get getCollege() {
+                return this.college;
+            },
+
+            set setName(name) {
+                console.log("setting value to name");
+                if (name == "") {
+                    alert("not going to set value");
+                    return;
+                }
+                this.name = name;
+            },
+
+            set setCollege(college) {
+                console.log("setting value to college");
+                this.college = college;
+            },
+
+            display: function () {
+                return `${this.name} : ${this.college} : ${this.city}`
+            }
+        };
+        console.log(student1.display());
+
+        //going to change name
+
+        student1.name = "Ismail";
+        console.log(student1.display());
+
+        console.log(student1.getName);
+
+        //get the property : getter
+        //set the property : setter
+
+        //first we will create Blueprint
+
+        function Person(id, phone, age) {
+            this.personId=id;
+            this.PersonPhone=phone;
+            this.personAge=age;
+
+            this.display=function(){
+                return(
+                    this.personId + " : " + this.PersonPhone + " : " + this.personAge
+                );
+            };
+        }
+
+        let p1=new Person(101552,7304026983,27);
+        console.log(p1.display());
+
+        let p2=new Person(101553,8274022354,30);
+        console.log(p2.display());
+
+    </script>
+</body>
+
+</html>
