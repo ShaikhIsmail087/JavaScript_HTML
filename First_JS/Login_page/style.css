@@ -1,0 +1,45 @@
+.container{
+  text-align: center;
+}
+.align {
+  max-width: 400px; 
+  margin: auto;
+  margin-top: 10px;
+}
+.my-shake {
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-timing-function: easy-in;
+    animation-iteration-count: infinite;
+    border: 1px solid red;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(0deg);
+    }
+    12% {
+      transform: rotate(-2deg);
+    }
+    25% {
+      transform: rotate(0deg);
+    }
+    37% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    62% {
+      transform: rotate(-2deg);
+    }
+    75% {
+      transform: rotate(0deg);
+    }
+    87% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
