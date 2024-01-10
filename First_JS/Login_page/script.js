@@ -1,14 +1,19 @@
-$('form').on('submit', function(e) {
-    let allFilled = true;
-    $(this).find('input[type="email"],input[type="password"]').each(function(indx, item) {
-      let filled = item.value.length;
-      if (!filled) {
-        $(item).addClass('my-shake');
-        setTimeout(function() {
-          $(item).removeClass('my-shake');
-        }, 500);
-        allFilled = !!filled;
-      }
-    });
-    return allFilled;
+document.querySelector('form').addEventListener('submit', function(e) {
+  let allFilled = true;
+  const inputFields = this.querySelectorAll('input[type="email"], input[type="password"]');
+
+  inputFields.forEach(function(item) {
+    let filled = item.value.trim().length;
+    if (!filled) {
+      item.classList.add('my-shake');
+      setTimeout(function() {
+        item.classList.remove('my-shake');
+      }, 500);
+      allFilled = !!filled;
+    }
   });
+
+  if (!allFilled) {
+    e.preventDefault(); // Prevent form submission if any field is empty
+  }
+});
