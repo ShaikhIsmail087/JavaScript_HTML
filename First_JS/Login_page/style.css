@@ -1,45 +1,57 @@
-.container{
+/* .container{
   text-align: center;
 }
 .align {
   max-width: 400px; 
   margin: auto;
   margin-top: 10px;
+} */
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgb(200, 196, 204), rgba(37, 117, 252, 1))
 }
+
 .my-shake {
-    animation-name: shake;
-    animation-duration: 0.5s;
-    animation-timing-function: easy-in;
-    animation-iteration-count: infinite;
-    border: 1px solid red;
+  animation-name: shake;
+  animation-duration: 0.5s;
+  animation-timing-function: easy-in;
+  animation-iteration-count: infinite;
+  border: 1px solid red;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes shake {
-    0% {
-      transform: rotate(0deg);
-    }
-    12% {
-      transform: rotate(-2deg);
-    }
-    25% {
-      transform: rotate(0deg);
-    }
-    37% {
-      transform: rotate(2deg);
-    }
-    50% {
-      transform: rotate(0deg);
-    }
-    62% {
-      transform: rotate(-2deg);
-    }
-    75% {
-      transform: rotate(0deg);
-    }
-    87% {
-      transform: rotate(2deg);
-    }
-    100% {
-      transform: rotate(0deg);
-    }
+  12% {
+    transform: rotate(-2deg);
   }
+  25% {
+    transform: rotate(0deg);
+  }
+  37% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  62% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  87% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
