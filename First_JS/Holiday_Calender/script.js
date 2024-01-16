@@ -1,4 +1,4 @@
-k = `Your calendarific.com API Key`;
+k = `4MuSrEz6M7CuOiPy7MVFC8SRtOjOzXzG`;
 
 const userCountry = document.getElementById('country-input');
 const userYear = document.getElementById('year-input');
@@ -50,11 +50,11 @@ function countryDropdown() {
 }
 
 // API call for holidays
-function handleGetHolidays(evt){
+function handleGetHolidays(evt) {
     evt.preventDefault();
 
     let leapYear = false;
-    if ((0 == userYear.value % 4) && (0 != userYear.value % 100) || (0 == userYear.value % 400)){
+    if ((0 == userYear.value % 4) && (0 != userYear.value % 100) || (0 == userYear.value % 400)) {
         leapYear = true;
     }
 
@@ -64,9 +64,9 @@ function handleGetHolidays(evt){
         alert('You must choose a year first!')
     } else if (!leapYear && userMonth.value === '2' && userDay.value > 28) {
         alert('February ends on the 28th unless it is a leap year. Please choose a valid date.')
-    } else if (leapYear && userMonth.value === '2' && userDay.value>29) {
+    } else if (leapYear && userMonth.value === '2' && userDay.value > 29) {
         alert(`The year ${userYear.value} is a Leap Year! February only gets one extra day though. Please choose a valid date.`)
-    }else if (userDay.value === '31' && (userMonth.value === '4' || userMonth.value === '6' || userMonth.value === '9' || userMonth.value === '11')){
+    } else if (userDay.value === '31' && (userMonth.value === '4' || userMonth.value === '6' || userMonth.value === '9' || userMonth.value === '11')) {
         alert(`The month in question does not have 31 days. Please choose a valid date.`)
     } else {
         $.ajax({
@@ -78,7 +78,7 @@ function handleGetHolidays(evt){
                     let countryName = nameFromIso(userCountry.value);
                     alert(`There is no data for ${countryName} during ${userYear.value}.  Please input another year.`)
                 } else {
-                renderHoliday();
+                    renderHoliday();
                 }
             },
             (error) => {
@@ -88,7 +88,7 @@ function handleGetHolidays(evt){
     }
 }
 
-function renderHoliday(){
+function renderHoliday() {
     if (holidayList.length > 0) {
         holidayList.forEach(holiday => {
             createCard();
@@ -98,7 +98,7 @@ function renderHoliday(){
             let $cardName = $(`#card-name-${cardCount}`);
             let $cardDesc = $(`#card-desc-${cardCount}`);
 
-            $cardDate.text(holiday.date.iso.slice(0,10));
+            $cardDate.text(holiday.date.iso.slice(0, 10));
             $cardType.text(holiday.primary_type)
             $cardName.text(holiday.name);
             $cardDesc.text(holiday.description);
@@ -129,7 +129,7 @@ function createCard() {
     cardCount++;
     let newCard = document.createElement('section');
 
-    newCard.setAttribute('id',`card-${cardCount}`);
+    newCard.setAttribute('id', `card-${cardCount}`);
     newCard.innerHTML = `<span id='card-date-${cardCount}'></span><br><br><span id='card-type-${cardCount}'></span><h3 id='card-name-${cardCount}'>New Card</h3>
     <p id='card-desc-${cardCount}'>New Desc</p>`;
 
